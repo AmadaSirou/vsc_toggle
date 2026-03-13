@@ -1,9 +1,5 @@
 #Requires AutoHotkey v2.0
 #SingleInstance Force
-#
-#「無変換」キーを押し下げている間だけ、VSCodeが一時的に最小化され、背面のYouTubeなどを直接クリック・操作できます。
-#使用ツール: AutoHotkey v2 (Windows用の自動化スクリプト言語)
-#
 
 ; --- 初期設定：VSCodeを常に最前面にする ---
 SetupVSCode() {
@@ -34,3 +30,8 @@ SetupVSCode()
         WinActivate(hwnd)                 ;  フォーカスを確実にVSCへ戻す
     }
 }
+
+; 単独キー割り当て
+sc079::LWin           ; 変換キーをWindowsキーに割り当て
+RShift::#+Right       ; 右Shiftを Win + Shift + → に割り当て
+RAlt::^+r             ; 右Altを Ctrl + Shift + R に割り当て
